@@ -1,0 +1,28 @@
+User Stories (Student):
+Als Student möchte ich eine eigene Profilseite haben, um diese für meine Zwecke benutzen zu können
+Als Student möchte ich Kurse offline anschauen können, um mein Wissen zu erweitern
+Als Student möchte ich eine Vereinfachte Suchfunktion, um das gesuchte leichter zu finden
+Als Student möchte ich Videos/ Dozenten bewerten können, um diese weiter zu empfehlen
+Als Student möchte ich einen Account für mich erstellen können, um die Dienste für mich zu nutzen
+Als Student möchte ich Videos vormerken können (Favoriten), um diese später weiter anzuschauen
+
+User Stories (Dozent):
+Als Dozent möchte ich eine eigene Profilseite haben, um diese für meine Zwecke benutzen zu können
+Als Dozent möchte ich Videos hochladen/ anbieten können, um mein Wissen weiter zu vermitteln
+Als Dozent möchte ich die Möglichkeit haben, weiter empfohlen zu werden/ bewertet zu werden, damit Studenten mich besser finden können
+Als Dozent möchte ich eine sortierbare Liste mit allen meinen hochgeladenen Videos
+Als Dozent möchte ich andere Videos anderer Dozenten anschauen können, um meinen Horrizont zu erweitern
+Als Dozent möchte ich jedem Studenten eine kurze Einleitung über mich selbst geben können, um mich vorzustellen
+
+User Stories (Projektmitarbeiter):
+Als Programmierer möchte ich in der Lage sein mit Vue.js programmieren zu können, um im Frontend mitwirken zu können
+Als Programmierer möchte ich einen endgültigen Prototypen haben, damit ich meine Aufgaben und meine Zeit im Projekt genau einteilen kann und weiss, wie die Webseite aussehen soll
+Als Backend-Programmierer möchte ich dem eine Projektumgebung haben an der ich arbeiten kann, damit ich meine erarbeiteten Codes mit meinen Kollegen teilen kann und diese auch an dem geschriebenen weiter arbeiten können
+Als Frontend-Programmierer möchte ich dem eine Projektumgebung haben an der ich arbeiten kann, damit ich meine erarbeiteten Codes mit meinen Kollegen teilen kann und diese auch an dem geschriebenen weiter arbeiten können
+Als Projektmitarbeiter möchten wir einen guten Namen für die Webseite, um beim Kunden am Anfang schon einen guten Eindruck zu hinterlassen
+Als Projektmitarbeiter möchte ich eine Datei mit UserStories einsehen können, um einen kurzen Überblick über die Anfordungen an das Projekt zu bekommen
+Als Projekt-Mitarbeiter möchte ich die UserStories in den Boards sehen können, damit ich genau weiss, warum diese Aufgabe zu tätigen ist
+..... Weitere User Stories für die Mitarbeiter -> siehe Board
+
+Weitere User Stories:
+Als Dozent der Beuth HFT möchten wir sehen, welchen Fortschritt die Gruppe 11 bisher gemacht hat, um die Arbeit der Gruppe besser einschätzen zu können
