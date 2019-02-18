@@ -1,0 +1,249 @@
+@import "animate";
+
+$name-font-family: 'Major Mono Display', monospace;
+$second-font-family: 'Rajdhani', sans-serif;
+$main-color-pink: #FF0266;
+$white-border: 1px solid white;
+$gradient-black-to-trans: linear-gradient(to bottom, black, transparent);
+
+@mixin grid{
+		display: grid;
+		grid-template-columns: 1fr;
+}
+
+@mixin font($family, $size, $weight){
+		font: {
+			family: $family;
+			size: $size;
+			weight: $weight;
+		}
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 18px;
+}
+
+a{
+	text-decoration: none;
+}
+
+body {
+	background: url('../img/bg2.jpg') no-repeat top center fixed;
+	height: 100vh;
+	@include grid;
+	grid-template-rows: 1fr 7fr; 
+	justify-content: space-between;
+}
+
+section{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	background: linear-gradient(to top, black, transparent);
+
+}
+
+section>div{
+	margin-top: 10px;
+	padding-bottom: 10px;
+	display: grid;
+	grid-template-rows: 4fr 5fr;
+}
+
+form{
+	background: rgba(0,0,0,0.5);
+	display: grid;
+	grid-template-rows:repeat(5, 2fr) 3fr;
+	align-items: start;
+	justify-content: start;
+	justify-items: center;
+	padding: 5% 15%;
+	max-width: 400px;
+	text-align: center;
+}
+
+header{
+	padding-right: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 14fr;
+	background: $gradient-black-to-trans;
+	padding: 20px 5%;
+}
+
+section>div>div:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+article{
+	text-align: center;
+	padding-top: 6em;
+	transition: 0.5s;
+	h4{
+		border-bottom: $white-border;
+		padding: 20px;
+		color: white;
+		@include font($name-font-family, 4rem, 700);
+	}
+	&:hover{
+		background: $gradient-black-to-trans;
+		box-shadow: 0px 0px 8px 5px black;
+		cursor: pointer;
+		animation-name: scale;
+		animation-duration: 0.3s;
+		animation-timing-function: ease;
+		h4{
+			border-bottom-color: $main-color-pink;
+			color: $main-color-pink;
+		}
+	};
+}
+
+
+h1{
+	background: linear-gradient(to right, black, transparent);
+	margin: {
+		left: 10%;
+		
+	}	
+	margin-left: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding: 5px;
+	animation-name: rollIn;
+	animation-duration: 0.2s;
+	@include font($name-font-family, 4em, 700);
+	color: $main-color-pink;
+}
+
+h2{	
+	color: white;
+	@include font($second-font-family, 2em, 300);
+	color: $main-color-pink;
+}
+
+h3{
+	height: 1.3em;
+	@include font($second-font-family, 2em, 300);
+	color: $main-color-pink;
+}
+
+div>h3{
+	margin-left: 30%;
+	@include font($name-font-family, 2em, 300);
+	color: white;
+	margin: 0.2em;
+	border-left: 1px solid black;
+}
+
+@for $i from 0 through 4{
+	
+	div>h3:nth-child(#{$i}){
+		background: linear-gradient(to right, lighten(rgb(0,0,0),15% * $i), transparent);
+		margin-left: (10% + $i*3%);
+		animation-name: fadeInRight;
+		animation-duration: ($i*0.2s);
+	}
+}
+
+label{
+	@include font($second-font-family, 1.5em, 300);
+	color: white;
+
+}
+
+input{
+	background-color: white;
+	color: black;
+	padding: 5px;
+	height: 50px;
+	border-radius: 10px;
+	width: 100%;
+	align-self: start;
+}
+.error { 
+	border-color: red; 
+		animation-name: shake;
+	animation-duration: 0.1s;
+}
+
+#error{
+	@include font($second-font-family, 1em, 300);
+	color: red;
+}
+
+form>input{
+	margin-top: 10px;
+	background-color: $main-color-pink;
+	border: none;
+	padding: 10px;
+	@include font($name-font-family, 1.5em, 300);
+}
+
+footer{
+	background-color: rgba(0,0,0,0.5);
+	margin: 10px;
+	padding: 20px 0;
+}
+
+
+header img{
+	&:nth-child(1){
+		height: 50px;
+	}
+
+	&:nth-child(2){
+		width: 35px;
+		height: 35px;
+		animation-name: rotate;
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	
+	section{
+		grid-template-columns: 1fr;
+	}
+
+	form{
+		max-width: 70%;
+		margin: auto;
+		padding: 5%;
+	}
+}
+
+@media screen and (max-width: 700px){
+	*{
+		font-size: 16px;
+	}
+	h1{
+		margin: 0.5em 0;
+	}
+
+	section>div>div:nth-child(2) {
+		display: grid;
+		grid-template-columns: 1fr;
+		& h4{
+				border-left: none;
+				border-right: none;
+		}
+	}
+	article {
+		padding: 4em 0;
+	}
+}
+
+@media screen and (max-width: 550px){
+		*{
+		font-size: 9px;
+	}
+	form{
+		width: 80%;
+		justify-content: center;
+	}
+}

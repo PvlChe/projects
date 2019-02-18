@@ -1,0 +1,276 @@
+@import "animate";
+
+$name-font-family: 'Major Mono Display', monospace;
+$second-font-family: 'Rajdhani', sans-serif;
+$main-color-pink: #FF0266;
+
+@mixin font($family, $size){
+	font: {
+		family: $family;
+		size: $size;
+	}
+}
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 18px;
+	color: white;
+}
+
+body{
+	background-color: $main-color-pink;
+	padding-bottom: 60px;
+}
+
+header{
+	display: grid;
+	grid-template-columns: 1fr 1fr 14fr;
+	align-content: end;
+	background: linear-gradient(to bottom, rgba(0,0,0,1), transparent);
+	padding: 20px 5%;
+	position: fixed;
+	width: 100%;
+}
+
+header img{
+	&:nth-child(1){
+		height: 50px;
+	}
+
+	&:nth-child(2){
+		width: 35px;
+		height: 35px;
+		animation-name: rotate;
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+}
+
+
+section:nth-child(2){
+	display: grid;
+	grid-template-rows: 2fr 1fr 1fr;
+	height: 600px;
+	justify-items: center;
+	padding-top: 15%;
+	background: linear-gradient(to bottom, transparent, black);
+}
+
+section:nth-child(4){
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	justify-content: space-between;
+	padding: 15%;
+	background: linear-gradient(to bottom, rgba(0,0,0,1), transparent);
+}
+
+h1{	
+	background-color: black;
+	padding: 1em;
+	margin-bottom: 90px;
+	@include font($name-font-family, 4em);
+}
+
+h3{
+	@for $i from 0 through 3{
+	&:nth-child(#{$i}){
+		animation-name: fadeInLeftBig;
+		animation-duration: ($i*0.3s);
+	}
+}
+	@include font($name-font-family, 2.5em);
+}
+
+h4{		
+	padding: 20px;
+	@include font($name-font-family, 2.5em);
+}
+
+p{	
+	text-align: center;
+	@include font($second-font-family, 1.5em);
+}
+
+
+
+div{
+	text-align: center;
+	background-color: white;
+	height: 200px;
+	margin: 0 auto;
+}
+
+section:nth-child(4) article{
+	width: 300px;
+	height: 200px;
+
+}
+
+section:nth-child(3){
+	padding-top: 100px;
+	background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1));
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+
+	&>article{
+		text-align: center;
+		width: 60%;
+		height: 250px;
+		margin: auto;
+		padding: 60px;
+		padding-top: 30px;
+
+		&>p{	
+			text-align: center;
+			@include font($second-font-family, 1.2em);
+		}
+	}
+	&>article:not(:nth-child(3)){
+		border-bottom: 1px solid white;
+	}
+}
+
+
+
+button{
+	display: block;
+	color: white;
+	margin: 5px auto;	
+	width: 40%;
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: black;
+	padding: 10px;
+	@include font($name-font-family, 2em);
+}
+
+form{
+/*	background: linear-gradient(to top, rgb(0,0,0), rgba(0,0,0,0.6), rgb(0,0,0));
+	box-shadow: 0px 0px 8px 5px black;
+*/	background: rgba(0,0,0,0.5);
+	display: grid;
+	grid-template-rows:repeat(5, 2fr) 3fr;
+	align-items: start;
+	padding: 5% 0;
+	max-width: 400px;
+	text-align: center;
+	max-height: 600px;
+	margin: auto;
+	& span{
+		margin: auto;
+	}
+}
+
+label{
+	@include font($second-font-family, 1.5em);
+	color: white;
+
+}
+
+input{
+	background-color: white;
+	color: black;
+	padding: 5px;
+	height: 40px;
+	border-radius: 10px;
+	width: 100%;
+	align-self: end;
+}
+.error { 
+	border-color: red; 
+		animation-name: shake;
+	animation-duration: 0.1s;
+}
+
+#error{
+	@include font($second-font-family, 1em);
+	color: red;
+}
+
+form{
+
+	h3{
+		margin-bottom: 20px;
+	}
+ 	label{
+		width: 80%;
+		margin: auto;
+		background-color: black;
+		padding: 10px;
+		font-family: $second-font-family;
+	}
+	div{
+		background: none;
+		height: 30px;
+	}
+
+	input{
+	background-color: $main-color-pink;
+	border: none;
+	padding: 10px;
+	font-family: $name-font-family;
+	}
+
+}
+
+#modal{
+	display: none;
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.9);
+}
+
+@media screen and (max-width: 1200px){
+	
+	section:nth-child(4){
+		display: block;
+	}
+	div{
+		height: 5px;
+	}
+	article{
+		text-align: center;
+	}
+	h4{
+		font-size: 1.5em;
+		width: 80%;
+		font-family: $second-font-family;
+		margin: auto;
+	}
+
+	section:nth-child(3)>article{
+		height: 350px;
+		width: 300px;
+		&>p{
+			font-size: 1em;
+		}
+	}
+
+}
+
+@media screen and (max-width: 800px){
+	
+*{
+	font-size: 14px;
+}
+h3{
+	font-size: 1.5em;
+}
+header{
+	position: absolute;
+}
+
+
+}
+
+
+

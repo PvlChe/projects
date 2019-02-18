@@ -1,0 +1,295 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+  50% {
+    opacity: 1; } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+  30%, 80% {
+    transform: translateX(-10px); }
+  20%, 70% {
+    transform: translateX(10px); } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes scale {
+  0% {
+    transform: scale(1, 1);
+    z-index: 100; }
+  100% {
+    transform: scale(1.1, 1.1);
+    z-index: 100; } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg); }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background: url("../img/bg2.jpg") no-repeat top center fixed;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 7fr;
+  justify-content: space-between; }
+
+section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  background: linear-gradient(to top, black, transparent); }
+
+section > div {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-rows: 4fr 5fr; }
+
+form {
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-rows: repeat(5, 2fr) 3fr;
+  align-items: start;
+  justify-content: start;
+  justify-items: center;
+  padding: 5% 15%;
+  max-width: 400px;
+  text-align: center; }
+
+header {
+  padding-right: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 14fr;
+  background: linear-gradient(to bottom, black, transparent);
+  padding: 20px 5%; }
+
+section > div > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+
+article {
+  text-align: center;
+  padding-top: 6em;
+  transition: 0.5s; }
+  article h4 {
+    border-bottom: 1px solid white;
+    padding: 20px;
+    color: white;
+    font-family: "Major Mono Display", monospace;
+    font-size: 4rem;
+    font-weight: 700; }
+  article:hover {
+    background: linear-gradient(to bottom, black, transparent);
+    box-shadow: 0px 0px 8px 5px black;
+    cursor: pointer;
+    animation-name: scale;
+    animation-duration: 0.3s;
+    animation-timing-function: ease; }
+    article:hover h4 {
+      border-bottom-color: #FF0266;
+      color: #FF0266; }
+
+h1 {
+  background: linear-gradient(to right, black, transparent);
+  margin-left: 10%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 5px;
+  animation-name: rollIn;
+  animation-duration: 0.2s;
+  font-family: "Major Mono Display", monospace;
+  font-size: 4em;
+  font-weight: 700;
+  color: #FF0266; }
+
+h2 {
+  color: white;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  color: #FF0266; }
+
+h3 {
+  height: 1.3em;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2em;
+  font-weight: 300;
+  color: #FF0266; }
+
+div > h3 {
+  margin-left: 30%;
+  font-family: "Major Mono Display", monospace;
+  font-size: 2em;
+  font-weight: 300;
+  color: white;
+  margin: 0.2em;
+  border-left: 1px solid black; }
+
+div > h3:nth-child(0) {
+  background: linear-gradient(to right, black, transparent);
+  margin-left: 10%;
+  animation-name: fadeInRight;
+  animation-duration: 0s; }
+
+div > h3:nth-child(1) {
+  background: linear-gradient(to right, #262626, transparent);
+  margin-left: 13%;
+  animation-name: fadeInRight;
+  animation-duration: 0.2s; }
+
+div > h3:nth-child(2) {
+  background: linear-gradient(to right, #4d4d4d, transparent);
+  margin-left: 16%;
+  animation-name: fadeInRight;
+  animation-duration: 0.4s; }
+
+div > h3:nth-child(3) {
+  background: linear-gradient(to right, #737373, transparent);
+  margin-left: 19%;
+  animation-name: fadeInRight;
+  animation-duration: 0.6s; }
+
+div > h3:nth-child(4) {
+  background: linear-gradient(to right, #999999, transparent);
+  margin-left: 22%;
+  animation-name: fadeInRight;
+  animation-duration: 0.8s; }
+
+label {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  color: white; }
+
+input {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  height: 50px;
+  border-radius: 10px;
+  width: 100%;
+  align-self: start; }
+
+.error {
+  border-color: red;
+  animation-name: shake;
+  animation-duration: 0.1s; }
+
+#error {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  color: red; }
+
+form > input {
+  margin-top: 10px;
+  background-color: #FF0266;
+  border: none;
+  padding: 10px;
+  font-family: "Major Mono Display", monospace;
+  font-size: 1.5em;
+  font-weight: 300; }
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding: 20px 0; }
+
+header img:nth-child(1) {
+  height: 50px; }
+
+header img:nth-child(2) {
+  width: 35px;
+  height: 35px;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+@media screen and (max-width: 1200px) {
+  section {
+    grid-template-columns: 1fr; }
+  form {
+    max-width: 70%;
+    margin: auto;
+    padding: 5%; } }
+
+@media screen and (max-width: 700px) {
+  * {
+    font-size: 16px; }
+  h1 {
+    margin: 0.5em 0; }
+  section > div > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: 1fr; }
+    section > div > div:nth-child(2) h4 {
+      border-left: none;
+      border-right: none; }
+  article {
+    padding: 4em 0; } }
+
+@media screen and (max-width: 550px) {
+  * {
+    font-size: 9px; }
+  form {
+    width: 80%;
+    justify-content: center; } }

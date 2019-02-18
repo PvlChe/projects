@@ -1,0 +1,294 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3); }
+  50% {
+    opacity: 1; } }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+  30%, 80% {
+    transform: translateX(-10px); }
+  20%, 70% {
+    transform: translateX(10px); } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes scale {
+  0% {
+    transform: scale(1, 1);
+    z-index: 100; }
+  100% {
+    transform: scale(1.1, 1.1);
+    z-index: 100; } }
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg); }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: white; }
+
+body {
+  background-color: #3662F2;
+  padding-bottom: 60px; }
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 14fr;
+  align-content: end;
+  background: linear-gradient(to bottom, black, transparent);
+  padding: 20px 5%;
+  position: fixed;
+  width: 100%; }
+
+header img:nth-child(1) {
+  height: 50px; }
+
+header img:nth-child(2) {
+  width: 35px;
+  height: 35px;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+section:nth-child(2) {
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr;
+  height: 600px;
+  justify-items: center;
+  padding-top: 15%;
+  background: linear-gradient(to bottom, transparent, black); }
+
+section:nth-child(4) {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: space-between;
+  padding: 15%;
+  background: linear-gradient(to bottom, black, transparent); }
+
+h1 {
+  background-color: black;
+  padding: 1em;
+  margin-bottom: 90px;
+  font-family: "Major Mono Display", monospace;
+  font-size: 4em; }
+
+h3 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 2.5em; }
+  h3:nth-child(0) {
+    animation-name: fadeInLeftBig;
+    animation-duration: 0s; }
+  h3:nth-child(1) {
+    animation-name: fadeInLeftBig;
+    animation-duration: 0.3s; }
+  h3:nth-child(2) {
+    animation-name: fadeInLeftBig;
+    animation-duration: 0.6s; }
+  h3:nth-child(3) {
+    animation-name: fadeInLeftBig;
+    animation-duration: 0.9s; }
+
+h4 {
+  padding: 20px;
+  font-family: "Major Mono Display", monospace;
+  font-size: 2.5em; }
+
+p {
+  text-align: center;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5em; }
+
+div {
+  text-align: center;
+  background-color: white;
+  height: 200px;
+  margin: 0 auto; }
+
+section:nth-child(4) article {
+  width: 300px;
+  height: 200px; }
+
+section:nth-child(3) {
+  padding-top: 100px;
+  background: linear-gradient(to bottom, black, black);
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); }
+  section:nth-child(3) > article {
+    text-align: center;
+    width: 60%;
+    height: 250px;
+    margin: auto;
+    padding: 60px;
+    padding-top: 30px; }
+    section:nth-child(3) > article > p {
+      text-align: center;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 1.2em; }
+  section:nth-child(3) > article:not(:nth-child(3)) {
+    border-bottom: 1px solid white; }
+
+button {
+  display: block;
+  color: white;
+  margin: 5px auto;
+  width: 40%;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: black;
+  padding: 10px;
+  font-family: "Major Mono Display", monospace;
+  font-size: 2em; }
+
+form {
+  /*	background: linear-gradient(to top, rgb(0,0,0), rgba(0,0,0,0.6), rgb(0,0,0));
+	box-shadow: 0px 0px 8px 5px black;
+*/
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-rows: repeat(5, 2fr) 3fr;
+  align-items: start;
+  padding: 5% 0;
+  max-width: 400px;
+  text-align: center;
+  max-height: 600px;
+  margin: auto; }
+  form span {
+    margin: auto; }
+
+label {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5em;
+  color: white; }
+
+input {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  height: 40px;
+  border-radius: 10px;
+  width: 100%;
+  align-self: end; }
+
+.error {
+  border-color: red;
+  animation-name: shake;
+  animation-duration: 0.1s; }
+
+#error {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1em;
+  color: red; }
+
+form h3 {
+  margin-bottom: 20px; }
+
+form label {
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  padding: 10px;
+  font-family: "Rajdhani", sans-serif; }
+
+form div {
+  background: none;
+  height: 30px; }
+
+form input {
+  background-color: #3662F2;
+  border: none;
+  padding: 10px;
+  font-family: "Major Mono Display", monospace; }
+
+#modal {
+  display: none;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9); }
+
+@media screen and (max-width: 1200px) {
+  section:nth-child(4) {
+    display: block; }
+  div {
+    height: 5px; }
+  article {
+    text-align: center; }
+  h4 {
+    font-size: 1.5em;
+    width: 80%;
+    font-family: "Rajdhani", sans-serif;
+    margin: auto; }
+  section:nth-child(3) > article {
+    height: 350px;
+    width: 300px; }
+    section:nth-child(3) > article > p {
+      font-size: 1em; } }
+
+@media screen and (max-width: 800px) {
+  * {
+    font-size: 14px; }
+  h3 {
+    font-size: 1.5em; }
+  header {
+    position: absolute; }
+  input {
+    font-weight: 900; } }
