@@ -4,10 +4,6 @@ const aws = require('aws-sdk');
 const uuid = require('uuid');
 
 
-aws.config.update({
-    accessKeyId: 'AKIAJGIJBKPYOZH32GMQ',
-    secretAccessKey: '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'
-});
 
 const s3 = new aws.S3();
 
